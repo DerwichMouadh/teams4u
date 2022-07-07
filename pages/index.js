@@ -213,7 +213,7 @@ export default function Home() {
     {
       id: 4,
       name: "Galatasaray",
-      logo: "Galatasaray",
+      logo: "galatasaray",
       flag: "tr-1",
       league: "Turkey",
       attack: 72,
@@ -268,7 +268,7 @@ export default function Home() {
     {
       id: 9,
       name: "FC Girondins de Bordeaux",
-      logo: "Bordeaux",
+      logo: "bordeaux",
       flag: "fr-1",
       league: "France",
       attack: 75,
@@ -279,7 +279,7 @@ export default function Home() {
     {
       id: 10,
       name: "Club América",
-      logo: "America",
+      logo: "america",
       flag: "mx-1",
       league: "Mexico",
       attack: 75,
@@ -290,7 +290,7 @@ export default function Home() {
     {
       id: 11,
       name: "Udinese",
-      logo: "Udinese",
+      logo: "udinese",
       flag: "it-1",
       league: "Italy",
       attack: 75,
@@ -323,7 +323,7 @@ export default function Home() {
     {
       id: 14,
       name: "Fulham",
-      logo: "Fulham",
+      logo: "fulham",
       flag: "gb-eng-1",
       league: "England",
       attack: 75,
@@ -334,7 +334,7 @@ export default function Home() {
     {
       id: 15,
       name: "Genoa",
-      logo: "Genoa",
+      logo: "genoa",
       flag: "it-1",
       league: "Italy",
       attack: 75,
