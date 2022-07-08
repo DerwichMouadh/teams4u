@@ -375,6 +375,15 @@ export default function Home() {
     setRandom2(Math.floor(Math.random() * 17 + 1));
   };
 
+  const [random3, setRandom3] = useState(0);
+  const [random4, setRandom4] = useState(0);
+  const randoma3 = () => {
+    setRandom3(Math.floor(Math.random() * 15 + 1));
+  };
+  const randoma4 = () => {
+    setRandom4(Math.floor(Math.random() * 15 + 1));
+  };
+
   return (
     <div>
       <Head>
@@ -392,7 +401,7 @@ export default function Home() {
           <div className="text-3xl font-bold font-fancy text-center border-b-2 py-2">
             Teams4U
           </div>
-          <div className="flex items-center justify-evenly shadow-xl py-3">
+          <div className="flex space-x-3 px-6 items-center justify-between shadow-xl py-3">
             <div
               onClick={() => {
                 setOpen1(true);
@@ -400,7 +409,7 @@ export default function Home() {
               }}
               className={`${
                 open1 ? "opacity-100" : "opacity-50"
-              } bg-lime-500 hover:opacity-100 rounded-xl h-10 w-36 flex items-center justify-center cursor-pointer font-semibold`}
+              } bg-lime-500 hover:opacity-100 rounded-xl h-10 w-full flex items-center justify-center cursor-pointer font-semibold`}
             >
               3.5 Star Teams
             </div>
@@ -411,7 +420,7 @@ export default function Home() {
               }}
               className={`${
                 open2 ? "opacity-100" : "opacity-50"
-              } bg-lime-500 hover:opacity-100 rounded-xl h-10 w-36 flex items-center justify-center cursor-pointer font-semibold`}
+              } bg-lime-500 hover:opacity-100 rounded-xl h-10 w-full flex items-center justify-center cursor-pointer font-semibold`}
             >
               3 Star Teams
             </div>
@@ -438,13 +447,13 @@ export default function Home() {
                 <h2 className="text-center text-lg font-medium pt-4">
                   Random Teams Generator
                 </h2>
-                <div className="flex items-center justify-between">
+                <div className="flex space-x-3 items-center justify-between">
                   <div
                     onClick={() => {
                       randoma();
                       randoma2();
                     }}
-                    className="bg-lime-500 rounded-xl h-10 w-36 my-4 px-3 py-3 flex items-center justify-center cursor-pointer font-semibold"
+                    className="bg-lime-500 rounded-xl h-10 w-full my-4 px-3 py-3 flex items-center justify-center cursor-pointer font-semibold"
                   >
                     Start
                   </div>
@@ -453,16 +462,16 @@ export default function Home() {
                       setRandom(0);
                       setRandom2(0);
                     }}
-                    className="bg-lime-500 rounded-xl h-10 w-36 my-4 px-3 py-3 flex items-center justify-center cursor-pointer font-semibold"
+                    className="bg-lime-500 rounded-xl h-10 w-full my-4 px-3 py-3 flex items-center justify-center cursor-pointer font-semibold"
                   >
                     Reset
                   </div>
                 </div>
-                <div className="h-52 space-x-3 flex justify-evenly ">
+                <div className="h-56 space-x-3 flex justify-evenly ">
                   <div className="text-center  p-4 flex-1 border-2 border-lime-300 shadow-xl rounded-xl">
                     <h2 className="font-bold pb-5">Team A</h2>
                     {random < 1 && (
-                      <div className="w-12 m-auto pt-6">
+                      <div className="w-12 m-auto pt-8">
                         <Image
                           alt=""
                           src={"/unk.jpg"}
@@ -496,7 +505,7 @@ export default function Home() {
                   <div className="text-center p-4 flex-1 border-2 border-lime-300 shadow-xl rounded-xl">
                     <h2 className="font-bold pb-5">Team B</h2>
                     {random2 < 1 && (
-                      <div className="w-12 m-auto  pt-6">
+                      <div className="w-12 m-auto  pt-8">
                         <Image
                           alt=""
                           src={"/unk.jpg"}
@@ -609,6 +618,101 @@ export default function Home() {
                 priority
                 className="object-cover"
               />
+              <div className="mx-6">
+                <h2 className="text-center text-lg font-medium pt-4">
+                  Random Teams Generator
+                </h2>
+                <div className="flex space-x-3 items-center justify-between">
+                  <div
+                    onClick={() => {
+                      randoma3();
+                      randoma4();
+                    }}
+                    className="bg-lime-500 rounded-xl h-10 w-full my-4 px-3 py-3 flex items-center justify-center cursor-pointer font-semibold"
+                  >
+                    Start
+                  </div>
+                  <div
+                    onClick={() => {
+                      setRandom3(0);
+                      setRandom4(0);
+                    }}
+                    className="bg-lime-500 rounded-xl h-10 w-full my-4 px-3 py-3 flex items-center justify-center cursor-pointer font-semibold"
+                  >
+                    Reset
+                  </div>
+                </div>
+                <div className="h-56 space-x-3 flex justify-evenly ">
+                  <div className="text-center p-4 flex-1 border-2 border-lime-300 shadow-xl rounded-xl">
+                    <h2 className="font-bold pb-5">Team A</h2>
+                    {random3 < 1 && (
+                      <div className="w-12 m-auto pt-8">
+                        <Image
+                          alt=""
+                          src={"/unk.jpg"}
+                          priority
+                          className=""
+                          layout="responsive"
+                          width="10px"
+                          height="10px"
+                        />
+                      </div>
+                    )}
+                    {random3 > 0 && (
+                      <div>
+                        <div className="w-20 m-auto">
+                          <Image
+                            alt=""
+                            src={`/${data1[random3 - 1].logo}.jpg`}
+                            priority
+                            className=""
+                            layout="responsive"
+                            width="50px"
+                            height="50px"
+                          />
+                        </div>
+                        <p className="font-medium">
+                          {data1[random3 - 1].name.toUpperCase()}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                  <div className="text-center p-4 flex-1 border-2 border-lime-300 shadow-xl rounded-xl">
+                    <h2 className="font-bold pb-5">Team B</h2>
+                    {random4 < 1 && (
+                      <div className="w-12 m-auto  pt-8">
+                        <Image
+                          alt=""
+                          src={"/unk.jpg"}
+                          priority
+                          className=""
+                          layout="responsive"
+                          width="10px"
+                          height="10px"
+                        />
+                      </div>
+                    )}
+                    {random4 > 0 && (
+                      <div>
+                        <div className="w-20 m-auto">
+                          <Image
+                            alt=""
+                            src={`/${data1[random4 - 1].logo}.jpg`}
+                            priority
+                            className=""
+                            layout="responsive"
+                            width="50px"
+                            height="50px"
+                          />
+                        </div>
+                        <p className="font-medium">
+                          {data1[random4 - 1].name.toUpperCase()}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
               <div>
                 {data1.map(
                   ({
