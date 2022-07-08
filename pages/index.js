@@ -183,9 +183,9 @@ export default function Home() {
       logo: "hilal",
       flag: "sa-1",
       league: "SAUDI ARABIA",
-      attack: 78,
-      midfield: 74,
-      defence: 72,
+      attack: 76,
+      midfield: 75,
+      defence: 71,
       overall: 73,
     },
     {
@@ -194,8 +194,8 @@ export default function Home() {
       logo: "Azul",
       flag: "mx-1",
       league: "Mexico",
-      attack: 77,
-      midfield: 73,
+      attack: 73,
+      midfield: 72,
       defence: 73,
       overall: 74,
     },
@@ -207,7 +207,7 @@ export default function Home() {
       league: "Scotland",
       attack: 74,
       midfield: 74,
-      defence: 75,
+      defence: 73,
       overall: 74,
     },
     {
@@ -216,9 +216,9 @@ export default function Home() {
       logo: "galatasaray",
       flag: "tr-1",
       league: "Turkey",
-      attack: 72,
-      midfield: 72,
-      defence: 73,
+      attack: 78,
+      midfield: 73,
+      defence: 74,
       overall: 74,
     },
     {
@@ -227,8 +227,8 @@ export default function Home() {
       logo: "berlin",
       flag: "de-1",
       league: "Germany",
-      attack: 77,
-      midfield: 72,
+      attack: 73,
+      midfield: 73,
       defence: 73,
       overall: 74,
     },
@@ -238,9 +238,9 @@ export default function Home() {
       logo: "norwich",
       flag: "gb-eng-1",
       league: "England",
-      attack: 76,
+      attack: 72,
       midfield: 74,
-      defence: 74,
+      defence: 73,
       overall: 74,
     },
     {
@@ -260,9 +260,9 @@ export default function Home() {
       logo: "Strasbourg",
       flag: "fr-1",
       league: "France",
-      attack: 76,
+      attack: 77,
       midfield: 74,
-      defence: 72,
+      defence: 74,
       overall: 74,
     },
     {
@@ -271,20 +271,20 @@ export default function Home() {
       logo: "bordeaux",
       flag: "fr-1",
       league: "France",
-      attack: 75,
-      midfield: 75,
-      defence: 71,
+      attack: 74,
+      midfield: 74,
+      defence: 72,
       overall: 74,
     },
     {
       id: 10,
-      name: "Club América",
+      name: "América",
       logo: "america",
       flag: "mx-1",
       league: "Mexico",
-      attack: 75,
-      midfield: 74,
-      defence: 74,
+      attack: 77,
+      midfield: 73,
+      defence: 72,
       overall: 74,
     },
     {
@@ -294,8 +294,8 @@ export default function Home() {
       flag: "it-1",
       league: "Italy",
       attack: 75,
-      midfield: 74,
-      defence: 73,
+      midfield: 73,
+      defence: 74,
       overall: 74,
     },
     {
@@ -311,14 +311,14 @@ export default function Home() {
     },
     {
       id: 13,
-      name: "Lokomotiv Moskva",
-      logo: "Lokomotiv",
-      flag: "ru-1",
-      league: "Russia",
-      attack: 75,
-      midfield: 73,
-      defence: 73,
-      overall: 74,
+      name: "FC Nantes",
+      logo: "nantes",
+      flag: "fr-1",
+      league: "France",
+      attack: 74,
+      midfield: 76,
+      defence: 71,
+      overall: 73,
     },
     {
       id: 14,
@@ -326,9 +326,9 @@ export default function Home() {
       logo: "fulham",
       flag: "gb-eng-1",
       league: "England",
-      attack: 75,
-      midfield: 73,
-      defence: 73,
+      attack: 78,
+      midfield: 74,
+      defence: 72,
       overall: 74,
     },
     {
@@ -337,20 +337,20 @@ export default function Home() {
       logo: "genoa",
       flag: "it-1",
       league: "Italy",
-      attack: 75,
+      attack: 72,
       midfield: 72,
-      defence: 74,
+      defence: 72,
       overall: 74,
     },
     {
       id: 16,
       name: "KRC Genk",
       logo: "genk",
-      flag: "it-1",
+      flag: "be-1",
       league: "BELGIUM",
-      attack: 77,
-      midfield: 72,
-      defence: 73,
+      attack: 75,
+      midfield: 73,
+      defence: 72,
       overall: 73,
     },
     {
@@ -359,12 +359,21 @@ export default function Home() {
       logo: "saint",
       flag: "fr-1",
       league: "France",
-      attack: 76,
-      midfield: 74,
+      attack: 75,
+      midfield: 73,
       defence: 72,
       overall: 73,
     },
   ];
+
+  const [random, setRandom] = useState(0);
+  const [random2, setRandom2] = useState(0);
+  const randoma = () => {
+    setRandom(Math.floor(Math.random() * 17 + 1));
+  };
+  const randoma2 = () => {
+    setRandom2(Math.floor(Math.random() * 17 + 1));
+  };
 
   return (
     <div>
@@ -425,6 +434,101 @@ export default function Home() {
                 priority
                 className="object-cover"
               />
+              <div className="mx-6">
+                <h2 className="text-center text-lg font-medium pt-4">
+                  Random Teams Generator
+                </h2>
+                <div className="flex items-center justify-between">
+                  <div
+                    onClick={() => {
+                      randoma();
+                      randoma2();
+                    }}
+                    className="bg-lime-500 rounded-xl h-10 w-36 my-4 px-3 py-3 flex items-center justify-center cursor-pointer font-semibold"
+                  >
+                    Start
+                  </div>
+                  <div
+                    onClick={() => {
+                      setRandom(0);
+                      setRandom2(0);
+                    }}
+                    className="bg-lime-500 rounded-xl h-10 w-36 my-4 px-3 py-3 flex items-center justify-center cursor-pointer font-semibold"
+                  >
+                    Reset
+                  </div>
+                </div>
+                <div className="h-52 space-x-3 flex justify-evenly ">
+                  <div className="text-center  p-4 flex-1 border-2 border-lime-300 shadow-xl rounded-xl">
+                    <h2 className="font-bold pb-5">Team A</h2>
+                    {random < 1 && (
+                      <div className="w-12 m-auto pt-6">
+                        <Image
+                          alt=""
+                          src={"/unk.jpg"}
+                          priority
+                          className=""
+                          layout="responsive"
+                          width="10px"
+                          height="10px"
+                        />
+                      </div>
+                    )}
+                    {random > 0 && (
+                      <div>
+                        <div className="w-20 m-auto">
+                          <Image
+                            alt=""
+                            src={`/${data2[random - 1].logo}.jpg`}
+                            priority
+                            className=""
+                            layout="responsive"
+                            width="50px"
+                            height="50px"
+                          />
+                        </div>
+                        <p className="font-medium">
+                          {data2[random - 1].name.toUpperCase()}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                  <div className="text-center p-4 flex-1 border-2 border-lime-300 shadow-xl rounded-xl">
+                    <h2 className="font-bold pb-5">Team B</h2>
+                    {random2 < 1 && (
+                      <div className="w-12 m-auto  pt-6">
+                        <Image
+                          alt=""
+                          src={"/unk.jpg"}
+                          priority
+                          className=""
+                          layout="responsive"
+                          width="10px"
+                          height="10px"
+                        />
+                      </div>
+                    )}
+                    {random2 > 0 && (
+                      <div>
+                        <div className="w-20 m-auto">
+                          <Image
+                            alt=""
+                            src={`/${data2[random2 - 1].logo}.jpg`}
+                            priority
+                            className=""
+                            layout="responsive"
+                            width="50px"
+                            height="50px"
+                          />
+                        </div>
+                        <p className="font-medium">
+                          {data2[random2 - 1].name.toUpperCase()}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
               <div>
                 {data2.map(
                   ({
@@ -443,7 +547,9 @@ export default function Home() {
                       className="rounded-xl my-4 mx-6 pb-4 shadow-xl border"
                     >
                       <div className="bg-lime-300 rounded-t-xl py-2 mb-4">
-                        <h2 className="text-center font-medium">{league.toUpperCase()}</h2>
+                        <h2 className="text-center font-medium">
+                          {league.toUpperCase()}
+                        </h2>
                         <div className="w-12 m-auto">
                           <Image
                             alt=""
@@ -521,7 +627,9 @@ export default function Home() {
                       className="rounded-xl my-4 mx-6 pb-4 shadow-xl border"
                     >
                       <div className="bg-lime-300 rounded-t-xl py-2 mb-4">
-                        <h2 className="text-center font-medium">{league.toUpperCase()}</h2>
+                        <h2 className="text-center font-medium">
+                          {league.toUpperCase()}
+                        </h2>
                         <div className="w-12 m-auto">
                           <Image
                             alt=""
